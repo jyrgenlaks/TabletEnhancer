@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 
 public class TabletEnhancerMain implements TabletEvent, KeyEvent {
@@ -59,6 +60,7 @@ public class TabletEnhancerMain implements TabletEvent, KeyEvent {
 		tabletListener.unregisterListener();
 		marker.close();
 		System.runFinalization();
+		JOptionPane.showMessageDialog(null, "Tablet Enhancer has been stopped!", "Tablet Enhancer", 0);
 		System.exit(0);
 	}
 }
