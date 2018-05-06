@@ -60,7 +60,7 @@ public class TabletEnhancerMain implements TabletEvent, KeyEvent {
 		tabletListener.unregisterListener();
 		marker.close();
 		System.runFinalization();
-		JOptionPane.showMessageDialog(null, "Tablet Enhancer has been stopped!", "Tablet Enhancer", 0);
+		JOptionPane.showMessageDialog(null, "Tablet Enhancer has been stopped!", "Tablet Enhancer", JOptionPane.INFORMATION_MESSAGE);
 		System.exit(0);
 	}
 }
