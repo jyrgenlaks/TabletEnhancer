@@ -4,7 +4,7 @@ import java.awt.*;
 public class TabletEnhancerMain implements TabletEvent, KeyEvent {
 
 	/** If the stylus was moved to a new location that is farther form the last location than the specified amount, it will be marked */
-	private static final int DETECTION_RADIUS_IN_PIXELS = 500;
+	private static final int DETECTION_RADIUS_IN_PIXELS = 200;
 	/** If the stylus hasn't been used for the specified amount, it will be marked */
 	private static final int STYLUS_MARKING_TIME_THRESHOLD_IN_MILLISECONDS = 5000;
 

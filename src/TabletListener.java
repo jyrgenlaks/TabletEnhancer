@@ -28,6 +28,7 @@ public class TabletListener implements NativeMouseInputListener, NativeKeyListen
 	private int lastX = 0, lastY = 0;
 	private int lastTriggeredX = 0, lastTriggeredY = 0;
 	private int lastTriggeredX2 = 0, lastTriggeredY2 = 0;
+	private int samePositionCounter = 0;
 
 	void addStylusListener(TabletEvent listener) {
 		stylusListeners.add(listener);
@@ -93,9 +94,12 @@ public class TabletListener implements NativeMouseInputListener, NativeKeyListen
 		int y = nativeMouseEvent.getY();
 
 		if (x == lastX && y == lastY) {
-			stylusDetected(x, y);
+			if(samePositionCounter++ > 1) {
+				stylusDetected(x, y);
+			}
 		}else{
 			newPositionDetected(x, y);
+			samePositionCounter = 0;
 		}
 
 		lastX = x;
