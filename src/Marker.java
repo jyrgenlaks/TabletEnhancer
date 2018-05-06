@@ -1,11 +1,9 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Line2D;
-import java.io.File;
 import java.io.IOException;
 
-public class Marker extends JDialog{
+class Marker extends JDialog{
 
 	private float alpha = 0;
 	private int size = 200;
@@ -60,7 +58,7 @@ public class Marker extends JDialog{
 		alpha = 1;
 	}
 
-	public void close() {
+	void close() {
 		running = false;
 	}
 
@@ -73,7 +71,7 @@ public class Marker extends JDialog{
 			MARKER_WIDTH = MARKER_HEIGHT = size;
 			setBackground (new Color (0, 0, 0, 0));
 			try {
-				markerImage = ImageIO.read(new File("assets/marker.png"));
+				markerImage = ImageIO.read(Marker.class.getResourceAsStream("/marker.png"));
 				markerImage = markerImage.getScaledInstance(MARKER_WIDTH, MARKER_HEIGHT, Image.SCALE_DEFAULT);
 			} catch (IOException e) {
 				e.printStackTrace();

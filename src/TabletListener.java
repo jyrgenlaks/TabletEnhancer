@@ -22,8 +22,8 @@ interface KeyEvent {
 
 public class TabletListener implements NativeMouseInputListener, NativeKeyListener {
 
-	private List<TabletEvent> stylusListeners = new ArrayList<TabletEvent>();
-	private List<KeyEvent> keyListeners = new ArrayList<KeyEvent>();
+	private List<TabletEvent> stylusListeners = new ArrayList<>();
+	private List<KeyEvent> keyListeners = new ArrayList<>();
 
 	private int lastX = 0, lastY = 0;
 	private int lastTriggeredX = 0, lastTriggeredY = 0;
@@ -125,12 +125,12 @@ public class TabletListener implements NativeMouseInputListener, NativeKeyListen
 
 	@Override
 	public void nativeKeyTyped(NativeKeyEvent nativeKeyEvent) {
-		System.out.println(nativeKeyEvent.getKeyCode());
+
 	}
 
 	@Override
 	public void nativeKeyPressed(NativeKeyEvent nativeKeyEvent) {
-		System.out.println(nativeKeyEvent.getKeyCode());
+
 	}
 
 	@Override

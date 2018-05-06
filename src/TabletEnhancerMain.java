@@ -1,5 +1,3 @@
-import org.jnativehook.GlobalScreen;
-
 import java.awt.*;
 
 public class TabletEnhancerMain implements TabletEvent, KeyEvent {
