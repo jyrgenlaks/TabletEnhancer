@@ -18,18 +18,20 @@ public class TabletEnhancerMain implements TabletEvent, KeyEvent {
 	}
 
 	private TabletEnhancerMain(){
+		marker = new Marker();
+
 		for(int i = 0; i < lastStylusLocations.length; i++){
 			lastStylusLocations[i] = new Point(0, 0);
 		}
-
-		marker = new Marker();
-		//Point mouse = MouseInfo.getPointerInfo().getLocation();
-		//marker.setMarker(mouse.x, mouse.y);
 
 		tabletListener = new TabletListener();
 		tabletListener.registerListener();
 		tabletListener.addStylusListener(this);
 		tabletListener.addKeyListener(this);
+
+		//To show that the program has actually started successfully
+		Point mouse = MouseInfo.getPointerInfo().getLocation();
+		marker.setMarker(mouse.x, mouse.y);
 
 	}
 
